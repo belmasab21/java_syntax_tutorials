@@ -1,0 +1,15 @@
+//This is how to generate a random number between 1 and 10.
+
+package RANDOM;
+import java.lang.Math;	//default
+public class randomNumber {
+
+	public static void main(String[] args) {
+  
+		int x = (int)(Math.random()*10); //multiply by 10 to get a number over 1
+		
+		System.out.println("x = " + x);
+
+	}
+
+}
