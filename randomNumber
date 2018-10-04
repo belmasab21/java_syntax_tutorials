@@ -1,4 +1,5 @@
-//This is how to generate a random number between 1 and 10.
+//This is how to generate a random number between 1 and 10, and shows the corresponding month up to march
+//Int x is multiplied by 4, so the max random number you can get in this ex is 3.  
 
 package RANDOM;
 import java.lang.Math;	//default
@@ -6,10 +7,28 @@ public class randomNumber {
 
 	public static void main(String[] args) {
   
-		int x = (int)(Math.random()*10); //multiply by 10 to get a number over 1
+		int x = (int)(Math.random()*4); //multiply by 10 to get a number over 1
 		
 		System.out.println("x = " + x);
+		
+		String monthName = "";
+		
+		switch(x) {
+			case 1: monthName = "Jan";
+			break;
+			case 2: monthName = "Feb";
+			break;
+			case 3: monthName = "March";
+			break;
+	}
+		System.out.println("X is " + x + ", The corresponding month is " + monthName);
+		
 
 	}
 
 }
+
+
+	
+
+
