@@ -1,0 +1,45 @@
+package RANDOM;
+public class RANDOM {
+
+	public static void main(String[] args) {
+
+		int x1, x2, y, z;
+		x1 = 1;
+		x2 = 1;
+		
+		y = 5 + x1--;	//y = 5 + 1 = 6, x1 = 0. The 2 minus signs means after the equation, x1 decreases by 1.
+		z = 5 + ++x2;
+		
+		System.out.println("x1 = " + x1);
+		System.out.println("x2 = " + x2);
+		System.out.println("y = " + y);
+		System.out.println("z = " + z);
+		
+		
+		//for loop
+		
+		//	for(int i=2; i<=20; i+=2) //i++ = +1, i+=2 = +2, NO SEMICOLON
+			//	System.out.print(i + " ");	
+			
+			int counter = 0;
+			for(int i=1; i<=600; i++) { //display i if i is divisible by 3 and 
+				if (i % 3 == 0 && i % 5 == 0) {
+					System.out.print(i+ "\t");
+					counter++; //adding 1 to the counter
+				if (counter % 10 == 0) {
+		System.out.println();
+				counter = 0;
+				}
+			}
+
+	} 
+		double sum = 0;
+		for (int i=1; i<=97; i+=2) {
+			sum = sum + i*1.0/(i+2);
+			System.out.println("i = " + i + ", sum = " + sum);
+		}
+			System.out.println("Last sum = " + sum); //If the println is outside the for loop, it'll print the last sum
+		
+	
+  }
+}
