@@ -1,0 +1,27 @@
+//This is showing how to create and call a method. 
+
+package RANDOM;
+
+public class RANDOM {
+
+	public static void main(String[] args) {
+		nPrint("Hello", 5);  	//This is how you call the method you made below after the end main
+	
+	
+	}//end main
+	
+	
+	public static void nPrint(String s, int n) {
+		for (int i=1; i<=n; i++)
+			System.out.println(s);
+	}//end method
+
+}//end class
+
+
+//The output of this on the console is:
+Hello
+Hello
+Hello
+Hello
+Hello
