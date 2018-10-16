@@ -26,3 +26,37 @@ Hello
 Hello
 Hello
 Hello
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+package RANDOM;
+import java.util.Scanner;
+public class RANDOM {
+
+	public static void main(String[] args) {
+	Scanner a = new Scanner(System.in);
+
+		int x = max(12, 17);	//calling the method, making it an int.
+		
+		System.out.println("Enter 2 numbers: ");
+		int num1 = a.nextInt();
+		int num2 = a.nextInt();
+		System.out.println("The larger number between " + num1 + " and " + num2 + " is " + max(num1, num2));
+		
+	}//end main
+	
+	
+	public static int max(int x1, int x2) {	//instead of void, it's a value returning method, so we use int.
+			int larger;
+			if (x1 > x2) {			//This is the logic behind finding which number is larger
+				larger = x1;
+			}
+			else {
+				larger = x2;
+			}
+			return larger;
+			
+	}//end method
+
+}//end class
+
+
