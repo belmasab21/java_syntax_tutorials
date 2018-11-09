@@ -1,0 +1,38 @@
+//This is to showcase how to put many classes into one java project
+
+package RANDOM;
+
+class swapperclass {
+	//instance variables
+	private int x, y;
+	
+	//constructor
+	swapperclass(int a, int b) {
+		x = a;
+		y = b;
+	}	//end swapper
+	public void setX(int a) {
+		x = a;
+	}	//end setX
+	public void swap() {
+		int temp = x;
+		x = y;
+		y = temp;
+		}	//end swap
+
+public String toString() {
+		return "(" + x +", " + y + ")";
+	}	//end toString
+
+}	//end swapperclass
+
+public class testswapper {
+	public static void main(String[] args) {
+	//create a swapper instance/object
+	swapperclass s1 = new swapperclass(20, 25);
+	s1.setX(15);
+	System.out.println("Before swapping, s1 is " + s1);
+	s1.swap();
+	System.out.println("After swapping, s1 is " + s1);
+	}	//end main
+}	//end testswapper
