@@ -1,0 +1,61 @@
+//This is showcasing how to make your own class by adding and subtracting dollar amounts
+
+package RANDOM;
+
+public class TestUSMoney {
+public static void main (String[] args) {
+		//declare and create a USMoney w/ object $3.67
+	USMoney US1 = new USMoney(3, 67);
+	USMoney US2 = new USMoney(5, 101);
+	//print s1
+	System.out.println("US1 = " + US1);
+	System.out.println("US2 = " + US2);
+	System.out.println("US1 + US2 = " + US1.plus(US2));				
+	System.out.println("US1 + US2 = " + USMoney.plus(US1, US2));	//<-------because the method is static, you have to call the
+	}	//end main												 	//	 	 the class it came from 					
+}	//end class														
+
+class USMoney {
+	private int dollars, cents;	//instance variables
+	
+	//constructor
+	USMoney(int dollars, int cents) {
+		this.dollars = dollars;
+		this.cents = cents;
+		//ensure cents is between 0 and 99
+		while (this.cents < 0) {
+			this.dollars--;
+			this.cents +=100;
+		}	//end while
+		while (this.cents > 100) {
+			this.dollars++;
+			this.cents -= 100;
+		}	//end while
+	}	//end constructor
+	//define a plus() method
+	public USMoney plus(USMoney s) {
+	int d, c;
+  //d = $2 + $6
+	d = this.dollars + s.dollars;
+  //c = .67 + .01
+	c = this.cents + s.cents;
+	return new USMoney(d, c);
+	}	//end plus
+	//define another plus() method
+	public static USMoney plus(USMoney US1, USMoney US2) {
+		int d, c;
+		d = US1.dollars + US2.dollars;
+		c = US1.cents + US2.cents;
+		return new USMoney(d, c);
+	}	//end plus2
+	//override toString method so that a USMoney can be printed as $2.56
+	public String toString() {
+		if (this.cents < 10) {
+		return "$" + this.dollars + ".0" + this.cents;
+		}	//end if
+		else {
+		return "$" + this.dollars + "." + this.cents;
+		}	//end else
+	}	//end toString
+}	//end class
+
