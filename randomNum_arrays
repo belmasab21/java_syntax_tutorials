@@ -9,7 +9,7 @@ public class capitalsearch {
 
 	public static void main(String[] args) throws Exception {
 		int[] cities = new int[50];
-		selectFive(cities);
+		States.selectFive(cities);
 		Scanner t = new Scanner(System.in);
 		File f = new File("capitals.txt");
 		Scanner fs = new Scanner(f);
@@ -17,21 +17,42 @@ public class capitalsearch {
 		String inputLine = fs.nextLine();
 		String items[] = inputLine.split(",");	
 		if (cities[i] == 1) {
-		System.out.println("What is the capital of " + items[0] + " :");
-		String city = t.nextLine();
+		States s = new States(items[0].trim(), items[1].trim());
+		System.out.print(s.display());
 			}	//end if
 		}	//end for
 	}	//end main
 	
-public static void selectFive(int[] x) {
-	int ranNum;
-	for (int i = 0; i < 5; i++) {
-		do {
-	ranNum = (int)(Math.random()*50);
-		} //end do
-		while (x[ranNum] == 1); 
-			x[ranNum] = 1;
-			
-		}	//end for
-	}	//end selectFive
+
+}	//end class
+
+class States {
+	private String state, capital;
+	Scanner t = new Scanner(System.in);
+	public States(String s, String c) {
+		this.state = s;
+		this.capital = c;
+	}	//end cons
+	public static void selectFive(int[] x) {
+		int ranNum;
+		for (int i = 0; i < 5; i++) {
+			do {
+		ranNum = (int)(Math.random()*50);
+			} //end do
+			while (x[ranNum] == 1); 
+				x[ranNum] = 1;
+				
+			}	//end for
+		}	//end selectFive
+	public String display() {
+	
+		System.out.println("What is the capital of: " + state + "?");
+		String city = t.nextLine();
+		if (city.equalsIgnoreCase(capital)) {
+			return "Correct\n";
+		}	//end if
+		else {
+			return "Incorrect. It is " + capital + ".\n";
+		}	//end else
+	}	//end display
 }	//end class
