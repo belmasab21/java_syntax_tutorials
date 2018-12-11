@@ -1,0 +1,28 @@
+//This shows you how to make another class and call it
+
+public class sumClass {
+  public static void main(String[] args) {
+  int i = 4;
+  int j = 5;
+  int s = sum(i, j);  //defining int s as class sum
+  System.out.println("The sum is " + s);  
+  printSum(i, j);   //You don't need a system.out in this case, since it's already defined in the class
+  } //end main
+  
+  public static int sum(int i, int j) {
+    return i + j;   //because the return type is int, you need to use the return method
+    }//end class declaration
+  } //end sum
+  
+  public static void printSum(int i, int j) {
+  private int a = 0;  //it's a private int so the value of this int doesn't get read in any other class, it's only for this class
+  a = i + j;
+    System.out.println("The sum is " + a);    //Because the return type is void, you have to have the system.out in the class
+   }  //end printSum
+} //end class
+
+
+Console:
+
+The sum is 9        //printed from line 8, using the sum class
+The sum is 9        //printed from line 9, using the printSum class
